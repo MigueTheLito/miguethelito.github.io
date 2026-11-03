@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#141a18">
+  <title>Miguel Flores — Unity Game Developer</title>
+  <meta name="description" content="Miguel Ángel Flores. Unity/C# game developer in Argentina. Explore playable projects, character movement, camera systems and multiplayer prototypes.">
+  <meta property="og:title" content="Miguel Flores — Unity Game Developer">
+  <meta property="og:description" content="Gameplay, cameras and the little details that make a game feel right. Explore my projects and development work.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://miguethelito.github.io/">
+  <meta property="og:image" content="https://miguethelito.github.io/assets/calamarino-cover.webp">
+  <link rel="canonical" href="https://miguethelito.github.io/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/space-grotesk.css">
+  <link rel="stylesheet" href="assets/manrope.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+  <header class="header">
+    <div class="shell nav-inner">
+      <a class="brand" href="#home" aria-label="Miguel Flores, home"><span class="monogram">mf<span>↗</span></span><span>MIGUEL<br>FLORES<span class="brand-dot">.</span></span></a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#work" data-i18n="navWork">Work</a><a href="#in-progress" data-i18n="navNow">In progress</a><a href="#about" data-i18n="navAbout">About</a><a href="#contact" data-i18n="navContact">Contact</a>
+      </nav>
+      <div class="nav-actions"><button class="language" id="language" aria-label="Cambiar a español">EN <span>↓</span></button><a class="cv-link" href="assets/Miguel_Flores_CV.pdf" download data-i18n="downloadCV">Download CV ↗</a><button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button></div>
+    </div>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden><a href="#work" data-i18n="navWork">Work</a><a href="#in-progress" data-i18n="navNow">In progress</a><a href="#about" data-i18n="navAbout">About</a><a href="#contact" data-i18n="navContact">Contact</a></nav>
+  </header>
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span><span data-i18n="heroEyebrow">UNITY / C# GAME DEVELOPER</span></div>
+          <h1 data-i18n="heroTitle">I build the<br><span>feel of play.</span></h1>
+          <p class="hero-intro" data-i18n="heroIntro">Character movement. Cameras. Gameplay systems. I turn ideas into playable experiences, one iteration at a time.</p>
+          <div class="hero-cta"><a class="button button-lime" href="#work"><span data-i18n="explore">Explore my work</span><span aria-hidden="true">↘</span></a><a class="text-link" href="#contact"><span data-i18n="getInTouch">Get in touch</span> <span aria-hidden="true">↗</span></a></div>
+          <div class="location"><span class="location-cross" aria-hidden="true">⌖</span> <span data-i18n="location">Rosario, Argentina · Open to remote opportunities</span></div>
+        </div>
+        <div class="hero-visual">
+          <div class="visual-orbit" aria-hidden="true"></div>
+          <div class="game-window">
+            <div class="window-top"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span data-i18n="playablePreview">PLAYABLE PROJECTS</span><span id="hero-count">01 / 03</span></div>
+            <button class="hero-image-button" id="hero-open" aria-label="View Calamarino project"><img id="hero-image" src="assets/calamarino-cover.webp" alt="Calamarino: a pixel art platformer with a pink character above a blue sea" fetchpriority="high" width="1600" height="802"><span class="image-view" data-i18n="viewProject">View project ↗</span></button>
+            <div class="window-bottom"><div><span class="tiny-label" id="hero-kind">2D PLATFORMER</span><h2 id="hero-project">Calamarino</h2></div><div class="slider-controls"><button id="hero-prev" aria-label="Previous project">←</button><button id="hero-next" aria-label="Next project">→</button></div></div>
+          </div>
+          <span class="visual-stamp" aria-hidden="true">MAKE IT<br><strong>PLAYABLE.</strong><span>↗</span></span>
+          <p class="visual-caption"><span>01—03</span><span data-i18n="actualCaptures">Actual captures from my published projects</span></p>
+        </div>
+      </div>
+      <div class="shell hero-footer"><span class="mini-index" data-i18n="focusLabel">MY FOCUS</span><div class="focus-items"><span data-i18n="focusMovement">Character movement</span><i>✳</i><span data-i18n="focusCamera">Camera behavior</span><i>✳</i><span data-i18n="focusGameplay">Gameplay systems</span><i>✳</i><span data-i18n="focusMultiplayer">Multiplayer prototypes</span></div></div>
+    </section>
+
+    <section class="work section-light" id="work">
+      <div class="shell">
+        <div class="section-heading"><div><p class="eyebrow dark"><span class="section-no">01 /</span><span data-i18n="workEyebrow">FROM PROTOTYPE TO PLAY</span></p><h2 data-i18n="workTitle">Selected <span>work.</span></h2></div><p class="section-intro" data-i18n="workIntro">Small games. Real systems.<br>A selection of playable projects from my development journey.</p></div>
+        <div class="project-grid">
+          <article class="project-card project-main"><button class="project-image" data-project="sigilo" aria-label="Explore Operación Sigilo"><img src="assets/operacion-sigilo-screen-6.webp" alt="Operación Sigilo gameplay: third-person character in an industrial stealth level" loading="lazy" width="794" height="446"><span class="project-number">01</span><span class="round-arrow" aria-hidden="true">↗</span></button><div class="project-meta"><div class="tags"><span data-i18n="tagTeam">TEAM PROJECT</span><span data-i18n="tagStealth">STEALTH / ACTION</span></div><h3><button data-project="sigilo">Operación Sigilo</button></h3><p data-i18n="sigiloShort">A stealth prototype built around player interaction and switching camera perspectives.</p><button class="project-detail" data-project="sigilo"><span data-i18n="exploreProject">Explore project</span> <span aria-hidden="true">↗</span></button></div></article>
+          <article class="project-card project-side"><button class="project-image" data-project="typing" aria-label="Explore Typing Crawler"><img src="assets/typing-crawler-screen-2.webp" alt="Typing Crawler gameplay: a dungeon enemy and the word to type to attack" loading="lazy" width="794" height="436"><span class="project-number">02</span><span class="round-arrow" aria-hidden="true">↗</span></button><div class="project-meta"><div class="tags"><span data-i18n="tagPrototype">PROTOTYPE</span><span data-i18n="tagTyping">TYPING / COMBAT</span></div><h3><button data-project="typing">Typing Crawler</button></h3><p data-i18n="typingShort">A dungeon prototype where typing becomes your way to fight.</p><button class="project-detail" data-project="typing"><span data-i18n="exploreProject">Explore project</span> <span aria-hidden="true">↗</span></button></div></article>
+          <article class="project-card project-wide"><button class="project-image" data-project="calamarino" aria-label="Explore Calamarino"><img src="assets/calamarino-cover.webp" alt="Calamarino gameplay: colorful pixel art jumping platforms above the water" loading="lazy" width="1600" height="802"><span class="project-number">03</span><span class="round-arrow" aria-hidden="true">↗</span></button><div class="project-meta"><div class="tags"><span data-i18n="tagAcademic">ACADEMIC PROJECT</span><span>2D PLATFORMER</span></div><h3><button data-project="calamarino">Calamarino</button></h3><p data-i18n="calamarinoShort">A short platforming adventure. Move, jump and help Calamarino reach the goal.</p><button class="project-detail" data-project="calamarino"><span data-i18n="exploreProject">Explore project</span> <span aria-hidden="true">↗</span></button></div></article>
+        </div>
+        <a class="itch-link" href="https://konamigue.itch.io/" target="_blank" rel="noopener noreferrer"><span data-i18n="allItch">All published projects on itch.io</span><span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="workbench" id="in-progress">
+      <div class="shell">
+        <div class="section-heading"><div><p class="eyebrow"><span class="section-no">02 /</span><span data-i18n="benchEyebrow">BEHIND THE GAMEPLAY</span></p><h2 data-i18n="benchTitle">On the <span>workbench.</span></h2></div><p class="section-intro" data-i18n="benchIntro">A closer look at what I’m building<br>and the systems I work on.</p></div>
+        <article class="bossaball">
+          <div class="bossaball-heading"><div class="tags tags-dark"><span>UNITY / C#</span><span data-i18n="internship">UTN INTERNSHIP</span></div><span class="progress-badge"><span class="status-dot"></span><span data-i18n="inProgress">In progress</span></span></div>
+          <div class="bossaball-intro"><h3>Bossaball<span>↗</span></h3><p data-i18n="bossaIntro">Gameplay, 3C mechanics and online prototypes, developed in collaboration with my internship team.</p></div>
+          <div class="system-grid"><div><span class="system-icon" aria-hidden="true">↑↗</span><span class="system-number">01</span><h4 data-i18n="characterTitle">Character movement</h4><p data-i18n="characterText">Working on jumping and dashing, with attention to how the character responds during play.</p></div><div><span class="system-icon" aria-hidden="true">⌖</span><span class="system-number">02</span><h4 data-i18n="cameraTitle">Camera & collisions</h4><p data-i18n="cameraText">Camera following and collision responses, connecting movement with the player’s view.</p></div><div><span class="system-icon" aria-hidden="true">↔</span><span class="system-number">03</span><h4 data-i18n="networkTitle">Multiplayer & physics</h4><p data-i18n="networkText">Online prototypes with Netcode for GameObjects and synchronization of players and physics objects.</p></div></div>
+          <div class="project-note"><span aria-hidden="true">↳</span><p data-i18n="bossaNote">Bossaball is not yet in my public portfolio. I’m completing my internship on the project and plan to share it on itch.io shortly afterward.</p></div>
+        </article>
+        <article class="piratas"><div class="piratas-icon" aria-hidden="true">↗<span>▰ ▰</span></div><div class="piratas-copy"><p class="tiny-label">UNITY / C# · GAMEPLAY DEMOS</p><h3>Piratas Materos</h3><p data-i18n="piratasText">Jumping-platform demos with collision handling and interactions with damage-dealing objects.</p></div><span class="outline-label" data-i18n="developmentWork">Development work</span></article>
+      </div>
+    </section>
+
+    <section class="about section-light" id="about"><div class="shell about-grid"><div><p class="eyebrow dark"><span class="section-no">03 /</span><span data-i18n="aboutEyebrow">THE DEVELOPER BEHIND THE PROJECTS</span></p><h2 data-i18n="aboutTitle">Hi, I’m Miguel.<br><span>Let’s make it work.</span></h2><p class="about-lead" data-i18n="aboutLead">A game developer in Rosario, Argentina, with a practical approach: build it, test it, improve it.</p><p class="about-body" data-i18n="aboutBody">I develop gameplay with Unity and C#, work with Unreal Engine Blueprints, and bring functional testing into the process. My experience spans academic, personal and collaborative projects, plus my current UTN internship.</p><div class="about-links"><a href="assets/Miguel_Flores_CV.pdf" download><span data-i18n="downloadCV">Download CV ↗</span></a><a href="https://www.linkedin.com/in/miguel-angel-flores-gamedev/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div><div class="profile-details"><div class="detail-row"><span class="detail-number">[01]</span><div><h3 data-i18n="toolkitTitle">The toolkit</h3><div class="skill-tags"><span>Unity</span><span>C#</span><span>Netcode for GameObjects</span><span>Unreal Blueprints</span><span>Data Tables</span><span>Functional QA</span></div></div></div><div class="detail-row"><span class="detail-number">[02]</span><div><h3 data-i18n="educationTitle">Always learning</h3><p data-i18n="educationText">University Technical Degree in Video Game Development and Production — UTN FRBA. Final stage, expected completion December 2026.</p></div></div><div class="detail-row"><span class="detail-number">[03]</span><div><h3 data-i18n="collabTitle">Ready to collaborate</h3><p data-i18n="collabText">Native Spanish · EF SET certified English C2.<br>Open to remote work from Argentina and on-site or hybrid opportunities in Rosario.</p></div></div><div class="detail-row"><span class="detail-number">[04]</span><div><h3 data-i18n="testingTitle">A testing mindset</h3><p data-i18n="testingText">Functional testing, clear reproduction steps, expected results and evidence. I care about how a mechanic behaves after it’s implemented.</p></div></div></div></div></section>
+
+    <section class="contact" id="contact"><div class="shell"><div class="contact-top"><p class="eyebrow"><span class="status-dot"></span><span data-i18n="available">OPEN TO GAME DEVELOPMENT OPPORTUNITIES</span></p><span class="contact-star" aria-hidden="true">✳</span></div><h2 data-i18n="contactTitle">Let’s make<br>something <span>playable.</span></h2><div class="contact-bottom"><div><a class="email-link" href="mailto:migue.angelko@gmail.com">migue.angelko@gmail.com <span aria-hidden="true">↗</span></a><button class="copy-email" id="copy-email" data-i18n="copyEmail">Copy email</button><span class="sr-only" id="copy-status" role="status"></span></div><div class="social-links"><a href="https://konamigue.itch.io/" target="_blank" rel="noopener noreferrer">itch.io ↗</a><a href="https://www.linkedin.com/in/miguel-angel-flores-gamedev/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="assets/Miguel_Flores_CV.pdf" target="_blank" rel="noopener" data-i18n="viewResume">View résumé ↗</a></div></div></div></section>
+  </main>
+  <footer class="footer"><div class="shell"><span>© <span id="year">2026</span> Miguel Ángel Flores</span><span data-i18n="footerText">Built around the details that make play feel right.</span><a href="#home" data-i18n="backTop">Back to top ↑</a></div></footer>
+  <dialog id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-inner"><button class="dialog-close" aria-label="Close project">✕</button><div class="dialog-top"><p class="eyebrow dark" id="dialog-category"></p><h2 id="dialog-title"></h2><p id="dialog-summary"></p></div><div class="gallery"><img id="dialog-image" alt="" width="1000" height="560"><div class="gallery-nav"><button id="gallery-prev" aria-label="Previous screenshot">←</button><span id="gallery-count"></span><button id="gallery-next" aria-label="Next screenshot">→</button></div></div><div class="dialog-info"><div><h3 data-i18n="overview">Project overview</h3><p id="dialog-description"></p></div><div><h3 data-i18n="controls">Controls</h3><p id="dialog-controls"></p></div></div><a class="button button-dark" id="dialog-link" target="_blank" rel="noopener noreferrer"><span data-i18n="openItch">Open on itch.io</span><span aria-hidden="true">↗</span></a></div></dialog>
+</body>
+</html>
