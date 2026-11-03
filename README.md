@@ -2,7 +2,7 @@
 
 A responsive static portfolio in English and Spanish with project galleries, itch.io links and a downloadable CV.
 
-Published projects include Bubble Defender, a Unity team project for Global Game Jam 2025 credited to Ghastt and Konamigue on its itch.io page. Miguel contributed as Game Designer & Developer; the descriptions do not assign ownership of specific mechanics.
+Published projects include Bubble Defender, a Unity game developed by the team in 32 hours for Global Game Jam 2025 and credited to Ghastt and Konamigue on its itch.io page. Miguel contributed as Game Designer & Developer and implemented aiming, enemy-damage handling and victory logic.
 
 ## GitHub Pages
 
