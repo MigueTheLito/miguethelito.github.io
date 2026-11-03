@@ -28,3 +28,5 @@ python -m http.server 4391 --bind 127.0.0.1
 Bossaball and Piratas Materos are identified as Unity/C# projects. Bossaball is an ongoing internship project with a public showcase planned after the internship.
 
 Images come from Miguel's published itch.io pages. Screenshots do not claim individual authorship of every visual asset. Space Grotesk and Manrope are included with their SIL Open Font Licenses.
+
+Current downloadable CV: `assets/Miguel_Flores_CV_Actualizado_Bubble_Defender.pdf`. Bubble Defender is the first entry under Projects.
