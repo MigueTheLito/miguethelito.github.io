@@ -7,8 +7,8 @@ const spanish = {
   explore:'Explorar proyectos',getInTouch:'Contactame',location:'Rosario, Argentina · Abierto a oportunidades remotas',playablePreview:'PROYECTOS JUGABLES',viewProject:'Ver proyecto ↗',
   actualCaptures:'Capturas reales de mis proyectos publicados',focusLabel:'MI ENFOQUE',focusMovement:'Movimiento de personajes',focusCamera:'Comportamiento de cámaras',focusGameplay:'Sistemas de gameplay',focusMultiplayer:'Prototipos multijugador',
   workEyebrow:'DEL PROTOTIPO AL JUEGO',workTitle:'Proyectos <span>seleccionados.</span>',workIntro:'Juegos pequeños. Sistemas reales.<br>Una selección de proyectos jugables de mi recorrido como desarrollador.',
-  tagTeam:'PROYECTO EN EQUIPO',tagStealth:'SIGILO / ACCIÓN',tagPrototype:'PROTOTIPO',tagTyping:'ESCRITURA / COMBATE',tagAcademic:'PROYECTO ACADÉMICO',
-  sigiloShort:'Un prototipo de sigilo con interacción del jugador y cambios de perspectiva de cámara.',typingShort:'Un prototipo de mazmorras donde escribir es tu forma de combatir.',calamarinoShort:'Una pequeña aventura de plataformas. Movete, saltá y ayudá a Calamarino a llegar a la meta.',
+  tagTeam:'PROYECTO EN EQUIPO',tagStealth:'SIGILO / ACCIÓN',tagPrototype:'PROTOTIPO',tagTyping:'ESCRITURA / COMBATE',tagAcademic:'PROYECTO ACADÉMICO',tagTowerDefense:'DEFENSA DE TORRES',bubbleRole:'Game designer y desarrollador · Proyecto en equipo',
+  sigiloShort:'Un prototipo de sigilo con interacción del jugador y cambios de perspectiva de cámara.',typingShort:'Un prototipo de mazmorras donde escribir es tu forma de combatir.',calamarinoShort:'Una pequeña aventura de plataformas. Movete, saltá y ayudá a Calamarino a llegar a la meta.',bubbleShort:'Un juego de jam desarrollado en equipo: protegé el Bubble Castle, reuní recursos y construí torres defensivas.',
   exploreProject:'Explorar proyecto',allItch:'Todos mis proyectos publicados en itch.io',
   benchEyebrow:'DETRÁS DEL GAMEPLAY',benchTitle:'En la mesa <span>de trabajo.</span>',benchIntro:'Una mirada a lo que estoy construyendo<br>y los sistemas en los que trabajo.',internship:'PASANTÍA UTN',inProgress:'En desarrollo',
   bossaIntro:'Gameplay, mecánicas 3C y prototipos online, desarrollados en colaboración con el equipo de mi pasantía.',
@@ -41,6 +41,12 @@ const projects = {
     en:{category:'TEAM PROJECT / STEALTH PROTOTYPE',kind:'STEALTH / ACTION',summary:'A stealth prototype with player interaction and multiple camera perspectives.',description:'A small-group academic project created for Video Game Engines 1 as part of the Video Game Development and Production degree. The work-in-progress build is available on itch.io.',controls:'W / A / S / D — Move<br>E — Interact<br>C — Change camera mode<br>← / → — Switch cameras<br>Mouse — Camera control',alt:'Operación Sigilo gameplay showing a character, stealth environments and camera perspectives'},
     es:{category:'PROYECTO EN EQUIPO / PROTOTIPO DE SIGILO',kind:'SIGILO / ACCIÓN',summary:'Un prototipo de sigilo con interacción y múltiples perspectivas de cámara.',description:'Un proyecto académico realizado en un pequeño grupo para la materia Motores de Videojuegos 1 de la Tecnicatura en Desarrollo y Producción de Videojuegos. La versión en desarrollo está disponible en itch.io.',controls:'W / A / S / D — Movimiento<br>E — Interactuar<br>C — Cambiar modo de cámara<br>← / → — Cambiar cámaras<br>Mouse — Controlar la cámara',alt:'Gameplay de Operación Sigilo con un personaje, escenarios de sigilo y perspectivas de cámara'}
   },
+  bubble:{
+    title:'Bubble Defender',url:'https://ghastt.itch.io/bubble-defender',
+    images:['assets/bubble-defender-cover.webp','assets/bubble-defender-screen-1.webp','assets/bubble-defender-screen-2.webp'],
+    en:{category:'GLOBAL GAME JAM 2025 / UNITY / TEAM PROJECT',kind:'TOWER DEFENSE / GAME JAM',summary:'Protect the Bubble Castle in a small tower-defense game built with a team for Global Game Jam 2025.',description:'A Unity prototype for Windows, created for Global Game Jam 2025. I contributed as a Game Designer & Developer within the team. Collect resources to build defensive towers and use the bubble cannon to push enemies away from the castle. The published project credits Ghastt and Konamigue.',controls:'Mouse — Aim<br>Left click — Push enemies / Collect resources<br>Right click — Build towers<br><br>Gamepad: Left stick — Aim<br>X — Push / Collect resources<br>B — Build towers',alt:'Bubble Defender gameplay: an underwater bubble castle, defensive towers and approaching enemies'},
+    es:{category:'GLOBAL GAME JAM 2025 / UNITY / PROYECTO EN EQUIPO',kind:'DEFENSA DE TORRES / GAME JAM',summary:'Protegé el Bubble Castle en un pequeño juego de defensa de torres creado en equipo para la Global Game Jam 2025.',description:'Un prototipo en Unity para Windows, creado para la Global Game Jam 2025. Participé como game designer y desarrollador dentro del equipo. Reuní recursos para construir torres defensivas y usá el cañón de burbujas para alejar a los enemigos del castillo. El proyecto publicado acredita a Ghastt y Konamigue.',controls:'Mouse — Apuntar<br>Clic izquierdo — Empujar enemigos / Reunir recursos<br>Clic derecho — Construir torres<br><br>Gamepad: Stick izquierdo — Apuntar<br>X — Empujar / Reunir recursos<br>B — Construir torres',alt:'Gameplay de Bubble Defender: un castillo de burbujas submarino, torres defensivas y enemigos que se acercan'}
+  },
   typing:{
     title:'Typing Crawler',url:'https://konamigue.itch.io/typong-c',
     images:['assets/typing-crawler-screen-2.webp','assets/typing-crawler-screen-1.webp'],
@@ -52,7 +58,7 @@ const projects = {
 let language = 'en';
 try { if (localStorage.getItem('mf-portfolio-language') === 'es') language = 'es'; } catch {}
 let heroIndex = 0;
-const heroKeys = ['calamarino','sigilo','typing'];
+const heroKeys = ['calamarino','sigilo','typing','bubble'];
 let currentProject = null;
 let galleryIndex = 0;
 const dialog = document.querySelector('#project-dialog');
@@ -63,7 +69,7 @@ function updateHero(){
   const copy = project[language];
   const image = document.querySelector('#hero-image');
   image.src = project.images[0]; image.alt = copy.alt;
-  document.querySelector('#hero-count').textContent = `${String(heroIndex+1).padStart(2,'0')} / 03`;
+  document.querySelector('#hero-count').textContent = `${String(heroIndex+1).padStart(2,'0')} / ${String(heroKeys.length).padStart(2,'0')}`;
   document.querySelector('#hero-kind').textContent = copy.kind;
   document.querySelector('#hero-project').textContent = project.title;
   document.querySelector('#hero-open').setAttribute('aria-label',`${language==='en'?'Explore':'Explorar'} ${project.title}`);
@@ -116,8 +122,8 @@ function openProject(key){
 }
 document.querySelectorAll('[data-project]').forEach(el => el.addEventListener('click',()=>openProject(el.dataset.project)));
 document.querySelector('#hero-open').addEventListener('click',()=>openProject(heroKeys[heroIndex]));
-document.querySelector('#hero-prev').addEventListener('click',()=>{heroIndex=(heroIndex+2)%3;updateHero();});
-document.querySelector('#hero-next').addEventListener('click',()=>{heroIndex=(heroIndex+1)%3;updateHero();});
+document.querySelector('#hero-prev').addEventListener('click',()=>{heroIndex=(heroIndex-1+heroKeys.length)%heroKeys.length;updateHero();});
+document.querySelector('#hero-next').addEventListener('click',()=>{heroIndex=(heroIndex+1)%heroKeys.length;updateHero();});
 languageButton.addEventListener('click',()=>setLanguage(language==='en'?'es':'en'));
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('close',()=>document.body.classList.remove('modal-open'));

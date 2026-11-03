@@ -2,6 +2,8 @@
 
 A responsive static portfolio in English and Spanish with project galleries, itch.io links and a downloadable CV.
 
+Published projects include Bubble Defender, a Unity team project for Global Game Jam 2025 credited to Ghastt and Konamigue on its itch.io page. Miguel contributed as Game Designer & Developer; the descriptions do not assign ownership of specific mechanics.
+
 ## GitHub Pages
 
 Deployment target: `https://miguethelito.github.io/` from the `MigueTheLito/miguethelito.github.io` repository.
