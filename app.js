@@ -15,7 +15,8 @@ const spanish = {
   characterTitle:'Movimiento del personaje',characterText:'Trabajo en saltos y dash, prestando atención a cómo responde el personaje durante el juego.',
   cameraTitle:'Cámara y colisiones',cameraText:'Seguimiento de cámara y respuestas a colisiones, conectando el movimiento con la vista del jugador.',
   networkTitle:'Multijugador y físicas',networkText:'Prototipos online con Netcode for GameObjects y sincronización de jugadores y objetos físicos.',
-  bossaNote:'Bossaball todavía no está en mi portfolio público. Estoy completando la pasantía en el proyecto y planeo compartirlo en itch.io poco después de finalizarla.',
+  bossaVideoLabel:'TRÁILER Y GAMEPLAY',watchYouTube:'Ver en YouTube ↗',
+  bossaNote:'La versión jugable de Bossaball todavía no está disponible en mi portfolio público.',
   piratasText:'Demos de plataformas de salto con manejo de colisiones e interacciones con objetos que causan daño.',developmentWork:'Trabajo de desarrollo',
   aboutEyebrow:'EL DESARROLLADOR DETRÁS DE LOS PROYECTOS',aboutTitle:'Hola, soy Miguel.<br><span>Hagamos que funcione.</span>',
   aboutLead:'Desarrollador de videojuegos en Rosario, Argentina, con un enfoque práctico: construir, probar y mejorar.',
@@ -111,6 +112,7 @@ function setLanguage(next){
   document.querySelector('#hero-next').setAttribute('aria-label',language==='en'?'Next project':'Proyecto siguiente');
   document.querySelector('#gallery-prev').setAttribute('aria-label',language==='en'?'Previous screenshot':'Captura anterior');
   document.querySelector('#gallery-next').setAttribute('aria-label',language==='en'?'Next screenshot':'Captura siguiente');
+  document.querySelector('#bossaball-video').setAttribute('title',language==='en'?'Bossaball: trailer and gameplay':'Bossaball: tráiler y gameplay');
   document.querySelectorAll('[data-project]').forEach(el=>el.setAttribute('aria-label',`${language==='en'?'Explore':'Explorar'} ${projects[el.dataset.project].title}`));
   try { localStorage.setItem('mf-portfolio-language',language); } catch {}
   updateHero();updateDialog();
