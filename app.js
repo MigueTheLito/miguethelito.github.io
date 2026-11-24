@@ -21,7 +21,7 @@ const spanish = {
   aboutLead:'Desarrollador de videojuegos en Rosario, Argentina, con un enfoque práctico: construir, probar y mejorar.',
   aboutBody:'Desarrollo gameplay con Unity y C#, trabajo con Blueprints en Unreal Engine e incorporo pruebas funcionales al proceso. Mi experiencia reúne proyectos académicos, personales y colaborativos, además de mi pasantía actual de UTN.',
   toolkitTitle:'Mis herramientas',educationTitle:'Siempre aprendiendo',educationText:'Tecnicatura Universitaria en Desarrollo y Producción de Videojuegos — UTN FRBA. Etapa final, con finalización prevista para diciembre de 2026.',
-  collabTitle:'Listo para colaborar',collabText:'Español nativo · Inglés C2 certificado por EF SET.<br>Disponible para trabajo remoto desde Argentina y oportunidades presenciales o híbridas en Rosario.',
+  collabTitle:'Listo para colaborar',collabText:'Español nativo · Inglés B1 (intermedio, nivel actual).<br>Disponible para trabajo remoto desde Argentina y oportunidades presenciales o híbridas en Rosario.',
   testingTitle:'Una mirada de testing',testingText:'Pruebas funcionales, pasos claros de reproducción, resultados esperados y evidencia. Me importa cómo se comporta una mecánica después de implementarla.',
   available:'ABIERTO A OPORTUNIDADES EN VIDEOJUEGOS',contactTitle:'Hagamos algo<br>que se pueda <span>jugar.</span>',copyEmail:'Copiar correo',viewResume:'Ver CV ↗',footerText:'Los detalles hacen que jugar se sienta bien.',backTop:'Volver arriba ↑',overview:'Sobre el proyecto',controls:'Controles',openItch:'Abrir en itch.io',
 };
@@ -120,10 +120,49 @@ function openProject(key){
   currentProject = key;galleryIndex = 0;updateDialog();
   dialog.showModal();document.body.classList.add('modal-open');
 }
+function nextHero(delta){
+  heroIndex=(heroIndex+delta+heroKeys.length)%heroKeys.length;
+  updateHero();
+}
+
+function enableSwipeNavigation(surface, navigate){
+  let start=null;
+  let suppressClick=false;
+  let clickTimer;
+  surface.addEventListener('pointerdown',event=>{
+    if(!event.isPrimary || event.button!==0) return;
+    clearTimeout(clickTimer);
+    suppressClick=false;
+    start={id:event.pointerId,x:event.clientX,y:event.clientY};
+    surface.setPointerCapture(event.pointerId);
+  });
+  surface.addEventListener('pointerup',event=>{
+    if(!start || start.id!==event.pointerId) return;
+    const dx=event.clientX-start.x,dy=event.clientY-start.y;
+    start=null;
+    if(surface.hasPointerCapture(event.pointerId)) surface.releasePointerCapture(event.pointerId);
+    if(Math.abs(dx)<40 || Math.abs(dx)<Math.abs(dy)*1.25) return;
+    suppressClick=true;
+    clickTimer=setTimeout(()=>{suppressClick=false;},500);
+    navigate(dx<0?1:-1);
+  });
+  const cancel=()=>{start=null;};
+  surface.addEventListener('pointercancel',cancel);
+  surface.addEventListener('lostpointercapture',cancel);
+  surface.addEventListener('dragstart',event=>event.preventDefault());
+  surface.addEventListener('click',event=>{
+    if(!suppressClick || event.detail===0) return;
+    suppressClick=false;
+    clearTimeout(clickTimer);
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  },true);
+}
 document.querySelectorAll('[data-project]').forEach(el => el.addEventListener('click',()=>openProject(el.dataset.project)));
 document.querySelector('#hero-open').addEventListener('click',()=>openProject(heroKeys[heroIndex]));
-document.querySelector('#hero-prev').addEventListener('click',()=>{heroIndex=(heroIndex-1+heroKeys.length)%heroKeys.length;updateHero();});
-document.querySelector('#hero-next').addEventListener('click',()=>{heroIndex=(heroIndex+1)%heroKeys.length;updateHero();});
+document.querySelector('#hero-prev').addEventListener('click',()=>nextHero(-1));
+document.querySelector('#hero-next').addEventListener('click',()=>nextHero(1));
+enableSwipeNavigation(document.querySelector('#hero-open'),nextHero);
 languageButton.addEventListener('click',()=>setLanguage(language==='en'?'es':'en'));
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('close',()=>document.body.classList.remove('modal-open'));
@@ -138,6 +177,7 @@ function nextScreenshot(delta){
 }
 document.querySelector('#gallery-prev').addEventListener('click',()=>nextScreenshot(-1));
 document.querySelector('#gallery-next').addEventListener('click',()=>nextScreenshot(1));
+enableSwipeNavigation(document.querySelector('#dialog-image'),nextScreenshot);
 dialog.addEventListener('keydown',event=>{
   if(event.key==='ArrowLeft'){event.preventDefault();nextScreenshot(-1);}
   if(event.key==='ArrowRight'){event.preventDefault();nextScreenshot(1);}
